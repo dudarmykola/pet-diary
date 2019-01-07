@@ -1,0 +1,21 @@
+<section id="pets">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let pet of pets">
+        <div class="card_pet">
+          <div class="pet">
+            <div class="card-body text-center">
+              <p>
+                <img class="img-fluid" src="{{pet.img}}" alt="{{pet.title}}">
+              </p>
+              <h4 routerLink="/pet/{{pet.id}}" class="card-title">{{pet.title}}</h4>
+              <p class="card-text">
+                {{pet.descripcion}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
