@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataApiService} from '../../services/data-api.service';
+
 
 @Component({
   selector: 'app-home',
@@ -6,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor() { }
+  constructor(private dataApi: DataApiService) { }
+
+  public pets = [];
+  public pet = '';
 
   ngOnInit() {
+    this.dataApi.getAllPets().subscribe(pets => {
+      this.pets = pets;
+    });
   }
-
 }
